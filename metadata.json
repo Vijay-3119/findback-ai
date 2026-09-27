@@ -1,0 +1,6 @@
+{
+  "name": "FindBack AI",
+  "description": "AI-Powered Lost & Found Platform for multi-venue neural matching, verified custody, and smart recovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
