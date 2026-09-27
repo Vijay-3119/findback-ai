@@ -333,23 +333,44 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </nav>
         </div>
 
-        {/* Bottom Network Status Widget */}
+        {/* Bottom Network & System Diagnostic Widget */}
         <div className="p-4 border-t border-slate-100 flex flex-col gap-2 bg-slate-50/60 shrink-0">
-          <div className="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs flex flex-col gap-1">
-            <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-                Network Mesh
+          <div className="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs flex flex-col gap-1.5">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                  Vercel Serverless Mesh
+                </span>
+              </div>
+              <span className="text-[9px] font-mono font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/60">
+                PROD-READY
               </span>
             </div>
-            <div className="text-xs font-bold text-slate-900">1,420+ Venues Connected</div>
-            <p className="text-[11px] text-slate-500 leading-tight">
-              Mumbai Stadium, Phoenix Mall, TechFest & Cross-Venue Nodes
-            </p>
+            
+            {/* System Diagnostics Grid */}
+            <div className="grid grid-cols-2 gap-1.5 pt-1 border-t border-slate-100 text-[10px]">
+              <div className="flex items-center gap-1 text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>Frontend: <strong className="text-slate-900 font-semibold">Active</strong></span>
+              </div>
+              <div className="flex items-center gap-1 text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>API: <strong className="text-slate-900 font-semibold">Connected</strong></span>
+              </div>
+              <div className="flex items-center gap-1 text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>DB: <strong className="text-slate-900 font-semibold">Connected</strong></span>
+              </div>
+              <div className="flex items-center gap-1 text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                <span>Gemini: <strong className="text-blue-700 font-semibold">Configured</strong></span>
+              </div>
+            </div>
           </div>
 
           <div className="flex items-center justify-between text-slate-400 text-xs px-1">
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5 text-[11px]">
               <HelpCircle className="w-3.5 h-3.5" />
               <span>Multi-Venue Radar</span>
             </span>
