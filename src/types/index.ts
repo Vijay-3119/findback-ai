@@ -141,5 +141,5 @@ export interface DeliveryRecord {
     description: string;
   }>;
   createdAt: string;
-  updatedAt: string;
+  updatedAt?: string;
 }

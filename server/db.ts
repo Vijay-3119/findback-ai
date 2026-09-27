@@ -610,7 +610,7 @@ class Database {
   getDeliveries(filters?: { matchId?: string }): DeliveryRecord[] {
     let dels = [...this.data.deliveries];
     if (filters?.matchId) dels = dels.filter(d => d.matchId === filters.matchId);
-    return dels.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+    return dels.sort((a, b) => new Date(b.updatedAt || b.createdAt).getTime() - new Date(a.updatedAt || a.createdAt).getTime());
   }
   getDelivery(id: string): DeliveryRecord | undefined {
     return this.data.deliveries.find(d => d.id === id || d.matchId === id);
